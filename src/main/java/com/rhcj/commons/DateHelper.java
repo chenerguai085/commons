@@ -86,6 +86,30 @@ public final class DateHelper {
         return null;
     }
 
+
+    /**
+     * 转换Str为Date
+     *
+     * @param dateStr 日期字符串
+     * @return 日期
+     */
+    public static Long parseSecond(String dateStr) {
+        long time = 0;
+        try {
+             time = DateUtils.parseDate("2019-12-14 16:53:00", dateTimePatterns[1]).getTime()/1000;
+
+            return time;
+        } catch (ParseException e) {
+            e.printStackTrace();
+
+
+        }
+
+        return time;
+    }
+
+
+
     /**
      * 转换Str为DateTme
      *
@@ -342,6 +366,20 @@ public final class DateHelper {
         }
         return date;
     }
+
+
+    /**
+     *remark:时间戳秒转 日期时间
+     *@author:chenj
+     *@date: 2019/12/4
+     *@return java.util.Date
+     */
+    public  static Date secondToDate(Long second){
+        Date date  = new Date(second * 1000);
+
+        return date;
+    }
+
 
 
 }
